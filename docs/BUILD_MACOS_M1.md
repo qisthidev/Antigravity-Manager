@@ -2,6 +2,8 @@
 
 This guide provides detailed instructions for building Antigravity Tools from source on Apple Silicon (M1/M2/M3) Macs running macOS Sequoia (15.x) or later.
 
+> **Need a quick reference?** See [BUILD_QUICK_REFERENCE.md](BUILD_QUICK_REFERENCE.md) for condensed commands and common issues.
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
