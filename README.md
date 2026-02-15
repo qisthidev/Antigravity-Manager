@@ -168,7 +168,15 @@ brew install --cask antigravity-tools
 *   **Windows**: `.msi` 或 便携版 `.zip`
 *   **Linux**: `.deb` 或 `AppImage`
 
-### 选项 C: Docker 部署 (推荐用于 NAS/服务器)
+### 选项 C: 从源码构建
+如果您想从源码构建应用程序，我们为不同平台提供了详细的构建指南：
+
+*   **[macOS (Apple Silicon M1/M2/M3) 构建指南](docs/BUILD_MACOS_M1.md)** - 适用于 MacBook Pro M1、M2、M3 及 Sequoia macOS 的完整构建说明
+*   其他平台构建指南即将推出
+
+> **注意**: 从源码构建需要安装 Rust、Node.js 等开发工具。首次构建可能需要 5-10 分钟。
+
+### 选项 D: Docker 部署 (推荐用于 NAS/服务器)
 如果您希望在容器化环境中运行，我们提供了原生的 Docker 镜像。该镜像内置了对 v4.0.2 原生 Headless 架构的支持，可自动托管前端静态资源，并通过浏览器直接进行管理。
 
 ```bash

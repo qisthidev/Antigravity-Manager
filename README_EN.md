@@ -169,7 +169,15 @@ Download from [GitHub Releases](https://github.com/lbjlaq/Antigravity-Manager/re
 *   **Windows**: `.msi` or portable `.zip`
 *   **Linux**: `.deb` or `AppImage`
 
-### Option C: Docker Deployment (Recommended for NAS/Servers)
+### Option C: Build from Source
+If you want to build the application from source, we provide detailed build guides for different platforms:
+
+*   **[macOS (Apple Silicon M1/M2/M3) Build Guide](docs/BUILD_MACOS_M1.md)** - Complete instructions for building on MacBook Pro M1, M2, M3 with Sequoia macOS
+*   Other platform build guides coming soon
+
+> **Note**: Building from source requires installation of Rust, Node.js, and other development tools. The first build may take 5-10 minutes.
+
+### Option D: Docker Deployment (Recommended for NAS/Servers)
 If you prefer running in a containerized environment, we provide a native Docker image. This image supports the v4.0.3 Native Headless architecture, automatically hosts frontend static resources, and allows for direct browser-based management.
 
 ```bash
