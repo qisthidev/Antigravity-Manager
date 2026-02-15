@@ -647,38 +647,6 @@ export const ProxyMonitor: React.FC<ProxyMonitorProps> = ({ className }) => {
                             <div className="space-y-4">
                                 <div>
                                     <div className="flex items-center justify-between mb-2">
-                                        <h3 className="text-xs font-bold uppercase text-gray-400 flex items-center gap-2">{t('monitor.details.request_payload')}</h3>
-                                        <button
-                                            type="button"
-                                            className="btn btn-ghost btn-xs gap-1"
-                                            onClick={async () => {
-                                                if (!selectedLog.request_body) return;
-                                                const success = await copyToClipboard(getCopyPayload(selectedLog.request_body));
-                                                if (success) {
-                                                    setCopiedRequestId(selectedLog.id);
-                                                    setTimeout(() => {
-                                                        setCopiedRequestId((current) => (current === selectedLog.id ? null : current));
-                                                    }, 2000);
-                                                }
-                                            }}
-                                            disabled={!selectedLog.request_body}
-                                            title={copiedRequestId === selectedLog.id ? t('proxy.config.btn_copied') : t('proxy.config.btn_copy')}
-                                            aria-label={t('proxy.config.btn_copy')}
-                                        >
-                                            {copiedRequestId === selectedLog.id ? (
-                                                <CheckCircle size={12} className="text-green-500" />
-                                            ) : (
-                                                <Copy size={12} />
-                                            )}
-                                            <span className="text-[10px]">
-                                                {copiedRequestId === selectedLog.id ? t('proxy.config.btn_copied') : t('proxy.config.btn_copy')}
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <div className="bg-gray-50 dark:bg-base-300 rounded-lg p-3 border border-gray-100 dark:border-base-300 overflow-hidden">{formatBody(selectedLog.request_body)}</div>
-                                </div>
-                                <div>
-                                    <div className="flex items-center justify-between mb-2">
                                         <h3 className="text-xs font-bold uppercase text-gray-400 flex items-center gap-2">{t('monitor.details.response_payload')}</h3>
                                         <button
                                             type="button"
@@ -710,6 +678,38 @@ export const ProxyMonitor: React.FC<ProxyMonitorProps> = ({ className }) => {
                                         </button>
                                     </div>
                                     <div className="bg-gray-50 dark:bg-base-300 rounded-lg p-3 border border-gray-100 dark:border-base-300 overflow-hidden">{formatBody(selectedLog.response_body)}</div>
+                                </div>
+                                <div>
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h3 className="text-xs font-bold uppercase text-gray-400 flex items-center gap-2">{t('monitor.details.request_payload')}</h3>
+                                        <button
+                                            type="button"
+                                            className="btn btn-ghost btn-xs gap-1"
+                                            onClick={async () => {
+                                                if (!selectedLog.request_body) return;
+                                                const success = await copyToClipboard(getCopyPayload(selectedLog.request_body));
+                                                if (success) {
+                                                    setCopiedRequestId(selectedLog.id);
+                                                    setTimeout(() => {
+                                                        setCopiedRequestId((current) => (current === selectedLog.id ? null : current));
+                                                    }, 2000);
+                                                }
+                                            }}
+                                            disabled={!selectedLog.request_body}
+                                            title={copiedRequestId === selectedLog.id ? t('proxy.config.btn_copied') : t('proxy.config.btn_copy')}
+                                            aria-label={t('proxy.config.btn_copy')}
+                                        >
+                                            {copiedRequestId === selectedLog.id ? (
+                                                <CheckCircle size={12} className="text-green-500" />
+                                            ) : (
+                                                <Copy size={12} />
+                                            )}
+                                            <span className="text-[10px]">
+                                                {copiedRequestId === selectedLog.id ? t('proxy.config.btn_copied') : t('proxy.config.btn_copy')}
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div className="bg-gray-50 dark:bg-base-300 rounded-lg p-3 border border-gray-100 dark:border-base-300 overflow-hidden">{formatBody(selectedLog.request_body)}</div>
                                 </div>
                             </div>
                         </div>
